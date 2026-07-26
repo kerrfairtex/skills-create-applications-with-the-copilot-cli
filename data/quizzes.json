@@ -1,0 +1,257 @@
+[
+  {
+    "quizID": "quiz-intro",
+    "lessonRef": "intro",
+    "questionSet": [
+      { "id": 1, "question": "Who created the Python programming language?", "choices": ["A. James Gosling", "B. Guido van Rossum", "C. Bjarne Stroustrup", "D. Linus Torvalds"] },
+      { "id": 2, "question": "In what year was Python first released?", "choices": ["A. 1985", "B. 1995", "C. 1991", "D. 2000"] },
+      { "id": 3, "question": "What does the print() function do in Python?", "choices": ["A. Reads input from the user", "B. Displays output to the console", "C. Saves data to a file", "D. Imports a module"] },
+      { "id": 4, "question": "Which of the following is the correct syntax for a Python comment?", "choices": ["A. // This is a comment", "B. /* This is a comment */", "C. # This is a comment", "D. -- This is a comment"] },
+      { "id": 5, "question": "Python is primarily classified as what type of language?", "choices": ["A. Compiled", "B. Assembly", "C. Machine code", "D. Interpreted"] },
+      { "id": 6, "question": "Which programming paradigm does Python NOT directly support?", "choices": ["A. Object-oriented", "B. Functional", "C. Procedural", "D. Assembly-level"] },
+      { "id": 7, "question": "What is the file extension for Python source files?", "choices": ["A. .java", "B. .py", "C. .js", "D. .cs"] },
+      { "id": 8, "question": "Which statement correctly describes Python's syntax?", "choices": ["A. It uses curly braces for code blocks", "B. It requires semicolons at end of each line", "C. It uses indentation to define code blocks", "D. All variables must be declared with a type"] },
+      { "id": 9, "question": "What is the output of: print(type(42))?", "choices": ["A. integer", "B. <class 'float'>", "C. <class 'int'>", "D. number"] },
+      { "id": 10, "question": "Which of the following best describes Python as 'high-level'?", "choices": ["A. It runs faster than low-level languages", "B. It abstracts away hardware details for the programmer", "C. It requires more memory to run", "D. It is only used for web development"] }
+    ],
+    "answerKey": ["B", "C", "B", "C", "D", "D", "B", "C", "C", "B"]
+  },
+  {
+    "quizID": "quiz-variables",
+    "lessonRef": "variables",
+    "questionSet": [
+      { "id": 1, "question": "How do you declare a variable in Python?", "choices": ["A. var x = 5", "B. int x = 5", "C. x = 5", "D. declare x = 5"] },
+      { "id": 2, "question": "What is the data type of: x = 3.14?", "choices": ["A. int", "B. str", "C. bool", "D. float"] },
+      { "id": 3, "question": "What does the type() function return for type(True)?", "choices": ["A. <class 'int'>", "B. <class 'bool'>", "C. <class 'str'>", "D. <class 'boolean'>"] },
+      { "id": 4, "question": "Which of the following is a valid Python variable name?", "choices": ["A. 1variable", "B. my-var", "C. my_variable", "D. class"] },
+      { "id": 5, "question": "What is the value of x after: x = '5' + '3'?", "choices": ["A. 8", "B. '8'", "C. '53'", "D. Error"] },
+      { "id": 6, "question": "Which type represents a sequence of characters in Python?", "choices": ["A. char", "B. string", "C. str", "D. text"] },
+      { "id": 7, "question": "What is the result of: bool(0)?", "choices": ["A. True", "B. False", "C. 0", "D. None"] },
+      { "id": 8, "question": "How do you convert the string '42' to an integer?", "choices": ["A. integer('42')", "B. int('42')", "C. convert('42', int)", "D. to_int('42')"] },
+      { "id": 9, "question": "What is the value of: x = None; print(type(x))?", "choices": ["A. <class 'undefined'>", "B. <class 'null'>", "C. <class 'NoneType'>", "D. <class 'void'>"] },
+      { "id": 10, "question": "Which statement allows multiple assignment in one line?", "choices": ["A. a, b, c = 1; 2; 3", "B. a = b = c = 1", "C. a = 1, b = 2, c = 3", "D. assign a=1 b=2 c=3"] }
+    ],
+    "answerKey": ["C", "D", "B", "C", "C", "C", "B", "B", "C", "B"]
+  },
+  {
+    "quizID": "quiz-operators",
+    "lessonRef": "operators",
+    "questionSet": [
+      { "id": 1, "question": "What is the result of 10 % 3 in Python?", "choices": ["A. 3", "B. 3.33", "C. 1", "D. 0"] },
+      { "id": 2, "question": "Which operator is used for exponentiation in Python?", "choices": ["A. ^", "B. exp()", "C. **", "D. ^^"] },
+      { "id": 3, "question": "What is the result of 7 // 2?", "choices": ["A. 3.5", "B. 3", "C. 4", "D. 2"] },
+      { "id": 4, "question": "Which comparison operator checks 'not equal to'?", "choices": ["A. <>", "B. !=", "C. !==", "D. /="] },
+      { "id": 5, "question": "What is the value of: True and False?", "choices": ["A. True", "B. False", "C. None", "D. Error"] },
+      { "id": 6, "question": "What does the 'not' operator do?", "choices": ["A. Adds two values", "B. Reverses a boolean value", "C. Compares two strings", "D. Performs bitwise NOT"] },
+      { "id": 7, "question": "What is the result of: 5 > 3 and 2 < 4?", "choices": ["A. False", "B. None", "C. True", "D. Error"] },
+      { "id": 8, "question": "What does the += operator do?", "choices": ["A. Adds two numbers and creates a new variable", "B. Compares two values", "C. Adds the right operand to the left and assigns the result", "D. Concatenates strings only"] },
+      { "id": 9, "question": "What is the value of: x = 5; x **= 2; print(x)?", "choices": ["A. 10", "B. 25", "C. 7", "D. 52"] },
+      { "id": 10, "question": "Which is the correct 'is' identity operator usage?", "choices": ["A. x is equal y", "B. x is y", "C. x == y", "D. x identity y"] }
+    ],
+    "answerKey": ["C", "C", "B", "B", "B", "B", "C", "C", "B", "B"]
+  },
+  {
+    "quizID": "quiz-control-flow",
+    "lessonRef": "control-flow",
+    "questionSet": [
+      { "id": 1, "question": "What keyword introduces an alternative condition in Python?", "choices": ["A. else if", "B. elsif", "C. elif", "D. elseif"] },
+      { "id": 2, "question": "Which is the correct syntax for an if statement?", "choices": ["A. if (x > 0) {}", "B. if x > 0:", "C. if x > 0 then", "D. IF x > 0 END"] },
+      { "id": 3, "question": "What is the output of: x=10; print('pos') if x>0 else print('neg')?", "choices": ["A. neg", "B. 10", "C. pos", "D. Error"] },
+      { "id": 4, "question": "How many elif clauses can a single if-elif-else block have?", "choices": ["A. Only 1", "B. Maximum 3", "C. Maximum 10", "D. As many as needed"] },
+      { "id": 5, "question": "What is the ternary (conditional) expression syntax in Python?", "choices": ["A. condition ? true_val : false_val", "B. true_val if condition else false_val", "C. if condition then true_val else false_val", "D. condition -> true_val | false_val"] },
+      { "id": 6, "question": "What does the pass statement do inside an if block?", "choices": ["A. Exits the if block immediately", "B. Raises an exception", "C. Does nothing — acts as a placeholder", "D. Returns a value"] },
+      { "id": 7, "question": "What is the result of: 'yes' if 5 in [1,2,3] else 'no'?", "choices": ["A. yes", "B. no", "C. None", "D. Error"] },
+      { "id": 8, "question": "Which operator tests membership in a sequence?", "choices": ["A. has", "B. contains", "C. in", "D. exists"] },
+      { "id": 9, "question": "What happens if no elif or else matches in an if block?", "choices": ["A. An exception is raised", "B. The program exits", "C. Nothing — execution continues after the block", "D. The first condition is re-evaluated"] },
+      { "id": 10, "question": "What is 'short-circuit evaluation' in Python?", "choices": ["A. Skipping the else clause", "B. Stopping evaluation early when the result is already determined", "C. Using fewer operators", "D. Returning None instead of False"] }
+    ],
+    "answerKey": ["C", "B", "C", "D", "B", "C", "B", "C", "C", "B"]
+  },
+  {
+    "quizID": "quiz-loops",
+    "lessonRef": "loops",
+    "questionSet": [
+      { "id": 1, "question": "What function generates a sequence of numbers for a for loop?", "choices": ["A. seq()", "B. list()", "C. range()", "D. nums()"] },
+      { "id": 2, "question": "What does range(3) produce?", "choices": ["A. [1, 2, 3]", "B. [0, 1, 2]", "C. [0, 1, 2, 3]", "D. [1, 2]"] },
+      { "id": 3, "question": "Which keyword exits a loop immediately?", "choices": ["A. exit", "B. stop", "C. return", "D. break"] },
+      { "id": 4, "question": "Which keyword skips to the next iteration of a loop?", "choices": ["A. skip", "B. next", "C. continue", "D. pass"] },
+      { "id": 5, "question": "What is an infinite loop?", "choices": ["A. A loop that runs exactly 1000 times", "B. A loop with no body", "C. A loop that never terminates", "D. A loop inside another loop"] },
+      { "id": 6, "question": "What is the output of: for i in range(2, 8, 2): print(i)?", "choices": ["A. 2 4 6", "B. 2 4 6 8", "C. 0 2 4 6", "D. 2 3 4 5 6 7"] },
+      { "id": 7, "question": "What does the else clause do on a for loop?", "choices": ["A. Runs if the loop body never executed", "B. Runs only if break was called", "C. Runs after the loop completes without a break", "D. Runs if the loop raises an exception"] },
+      { "id": 8, "question": "How do you iterate over both index and value in a list?", "choices": ["A. for i, v in items:", "B. for i, v in enumerate(items):", "C. for (i, v) in items:", "D. for index: items:"] },
+      { "id": 9, "question": "What is a nested loop?", "choices": ["A. A loop with a break statement", "B. A loop that uses a list", "C. A loop inside another loop", "D. A loop that skips odd numbers"] },
+      { "id": 10, "question": "What is the minimum number of times a while loop body executes?", "choices": ["A. Always at least once", "B. Zero times (if condition is initially False)", "C. Exactly once", "D. Twice"] }
+    ],
+    "answerKey": ["C", "B", "D", "C", "C", "A", "C", "B", "C", "B"]
+  },
+  {
+    "quizID": "quiz-functions",
+    "lessonRef": "functions",
+    "questionSet": [
+      { "id": 1, "question": "What keyword is used to define a function in Python?", "choices": ["A. function", "B. fun", "C. def", "D. func"] },
+      { "id": 2, "question": "What does a function return if no return statement is provided?", "choices": ["A. 0", "B. False", "C. None", "D. Empty string"] },
+      { "id": 3, "question": "What is a default parameter value?", "choices": ["A. A value the function always returns", "B. A parameter value used when none is supplied by the caller", "C. The first parameter of every function", "D. A required parameter"] },
+      { "id": 4, "question": "What does *args allow a function to accept?", "choices": ["A. Keyword arguments only", "B. A variable number of positional arguments", "C. Only two arguments", "D. Named arguments as a dictionary"] },
+      { "id": 5, "question": "What is a lambda function?", "choices": ["A. A function defined in a module", "B. A function that takes no arguments", "C. An anonymous, single-expression function", "D. A recursive function"] },
+      { "id": 6, "question": "What is the scope of a variable defined inside a function?", "choices": ["A. Global — accessible everywhere", "B. Local — accessible only within the function", "C. Module — accessible within the file", "D. Class — accessible within the class"] },
+      { "id": 7, "question": "What keyword is used to modify a global variable inside a function?", "choices": ["A. extern", "B. global", "C. public", "D. outer"] },
+      { "id": 8, "question": "What is recursion?", "choices": ["A. A loop that uses a list", "B. A function that calls itself", "C. A function with no return value", "D. A decorator pattern"] },
+      { "id": 9, "question": "What does a docstring do?", "choices": ["A. Documents the module only", "B. Comments out code", "C. Documents a function, method, or class", "D. Raises an exception"] },
+      { "id": 10, "question": "Which is the correct lambda syntax to double a number?", "choices": ["A. lambda: x * 2", "B. lambda x -> x * 2", "C. lambda x: x * 2", "D. function(x): return x * 2"] }
+    ],
+    "answerKey": ["C", "C", "B", "B", "C", "B", "B", "B", "C", "C"]
+  },
+  {
+    "quizID": "quiz-lists",
+    "lessonRef": "lists",
+    "questionSet": [
+      { "id": 1, "question": "How do you add an element to the end of a list?", "choices": ["A. list.add(x)", "B. list.push(x)", "C. list.append(x)", "D. list.insert(x)"] },
+      { "id": 2, "question": "What does list[1:4] return for [10,20,30,40,50]?", "choices": ["A. [10, 20, 30]", "B. [20, 30, 40]", "C. [20, 30, 40, 50]", "D. [10, 20, 30, 40]"] },
+      { "id": 3, "question": "How do you reverse a list in-place?", "choices": ["A. list.sort(reverse=True)", "B. list = list[::-1]", "C. list.reverse()", "D. reversed(list)"] },
+      { "id": 4, "question": "What is a list comprehension?", "choices": ["A. A way to sort lists", "B. A concise syntax for creating lists using a for expression", "C. A method to filter None values", "D. A built-in list function"] },
+      { "id": 5, "question": "What does len([1, 2, 3]) return?", "choices": ["A. 2", "B. 4", "C. 3", "D. 0"] },
+      { "id": 6, "question": "How do you remove the last element from a list?", "choices": ["A. list.remove(-1)", "B. list.pop()", "C. del list.last()", "D. list.delete(-1)"] },
+      { "id": 7, "question": "What is the index of the first element in a Python list?", "choices": ["A. 1", "B. -1", "C. 0", "D. None"] },
+      { "id": 8, "question": "How do you sort a list in ascending order in-place?", "choices": ["A. sorted(list)", "B. list.sort()", "C. list.order()", "D. list.arrange()"] },
+      { "id": 9, "question": "What does list[-1] return?", "choices": ["A. The first element", "B. An error", "C. The last element", "D. None"] },
+      { "id": 10, "question": "How do you combine two lists into one?", "choices": ["A. list1.merge(list2)", "B. list1.join(list2)", "C. list1 + list2", "D. combine(list1, list2)"] }
+    ],
+    "answerKey": ["C", "B", "C", "B", "C", "B", "C", "B", "C", "C"]
+  },
+  {
+    "quizID": "quiz-dictionaries",
+    "lessonRef": "dictionaries",
+    "questionSet": [
+      { "id": 1, "question": "How do you access the value for key 'name' in a dictionary d?", "choices": ["A. d.name", "B. d->name", "C. d['name']", "D. d.get_key('name')"] },
+      { "id": 2, "question": "What method safely retrieves a key that may not exist?", "choices": ["A. d.fetch(key)", "B. d.get(key)", "C. d.find(key)", "D. d.try(key)"] },
+      { "id": 3, "question": "How do you add a new key-value pair to a dictionary?", "choices": ["A. d.add('key', value)", "B. d.insert('key', value)", "C. d['key'] = value", "D. d.set('key', value)"] },
+      { "id": 4, "question": "Which method returns all the keys in a dictionary?", "choices": ["A. d.keys()", "B. d.all_keys()", "C. d.get_keys()", "D. keys(d)"] },
+      { "id": 5, "question": "What is a set in Python?", "choices": ["A. An ordered collection of key-value pairs", "B. An ordered collection of duplicates", "C. An unordered collection of unique elements", "D. A mutable string"] },
+      { "id": 6, "question": "What happens if you insert a duplicate key into a dictionary?", "choices": ["A. An error is raised", "B. The old value is overwritten", "C. Both values are stored", "D. The new value is ignored"] },
+      { "id": 7, "question": "Which syntax creates a dictionary comprehension?", "choices": ["A. {k: v in items}", "B. {k: v for k, v in items.items()}", "C. dict(k=v for k, v in items)", "D. [k: v for k, v in items]"] },
+      { "id": 8, "question": "How do you remove a key from a dictionary?", "choices": ["A. d.remove('key')", "B. del d['key']", "C. d.delete('key')", "D. d.pop_key('key')"] },
+      { "id": 9, "question": "What does set([1,2,2,3,3,3]) produce?", "choices": ["A. [1, 2, 3]", "B. {1, 2, 2, 3}", "C. {1, 2, 3}", "D. (1, 2, 3)"] },
+      { "id": 10, "question": "Which dictionary method returns key-value pairs as tuples?", "choices": ["A. d.pairs()", "B. d.tuples()", "C. d.items()", "D. d.values_with_keys()"] }
+    ],
+    "answerKey": ["C", "B", "C", "A", "C", "B", "B", "B", "C", "C"]
+  },
+  {
+    "quizID": "quiz-strings",
+    "lessonRef": "strings",
+    "questionSet": [
+      { "id": 1, "question": "Which method removes leading and trailing whitespace from a string?", "choices": ["A. s.clean()", "B. s.strip()", "C. s.trim()", "D. s.remove()"] },
+      { "id": 2, "question": "What does s.upper() return for s = 'hello'?", "choices": ["A. 'Hello'", "B. 'hello'", "C. 'HELLO'", "D. Error"] },
+      { "id": 3, "question": "How do you check if 'Python' is in the string s = 'I love Python'?", "choices": ["A. s.contains('Python')", "B. 'Python' in s", "C. s.find('Python') != None", "D. s.has('Python')"] },
+      { "id": 4, "question": "What does s.split(',') do?", "choices": ["A. Removes all commas from s", "B. Splits s into a list at each comma", "C. Counts the number of commas", "D. Replaces commas with spaces"] },
+      { "id": 5, "question": "Which f-string correctly embeds variable name in a string?", "choices": ["A. 'Hello {name}'", "B. f'Hello {name}'", "C. \"Hello \" + {name}", "D. format('Hello', name)"] },
+      { "id": 6, "question": "What is s[::- 1] equivalent to?", "choices": ["A. Removing the last character", "B. Reversing the string", "C. Converting to lowercase", "D. Getting every other character"] },
+      { "id": 7, "question": "Strings in Python are:", "choices": ["A. Mutable", "B. Immutable", "C. Optional", "D. Always lowercase"] },
+      { "id": 8, "question": "What does s.replace('a', 'b') do?", "choices": ["A. Replaces the first 'a' only", "B. Raises an error if 'a' not found", "C. Replaces all occurrences of 'a' with 'b'", "D. Swaps 'a' and 'b' positions"] },
+      { "id": 9, "question": "What method joins a list of strings with a separator?", "choices": ["A. ','.join(list)", "B. list.join(',')", "C. join(',', list)", "D. string.concat(list, ',')"] },
+      { "id": 10, "question": "What does len('Python') return?", "choices": ["A. 5", "B. 7", "C. 6", "D. 8"] }
+    ],
+    "answerKey": ["B", "C", "B", "B", "B", "B", "B", "C", "A", "C"]
+  },
+  {
+    "quizID": "quiz-file-io",
+    "lessonRef": "file-io",
+    "questionSet": [
+      { "id": 1, "question": "What does open('file.txt', 'w') do if the file already exists?", "choices": ["A. Raises an error", "B. Appends to the file", "C. Overwrites the file", "D. Creates a backup"] },
+      { "id": 2, "question": "Which mode opens a file for appending?", "choices": ["A. 'r'", "B. 'w'", "C. 'a'", "D. 'x'"] },
+      { "id": 3, "question": "Why is the 'with' statement recommended for file I/O?", "choices": ["A. It makes the code run faster", "B. It automatically closes the file after the block", "C. It prevents errors during reading", "D. It allows concurrent file access"] },
+      { "id": 4, "question": "What does file.readlines() return?", "choices": ["A. A single string with all content", "B. A list of strings, one per line", "C. A generator of lines", "D. The number of lines"] },
+      { "id": 5, "question": "Which module handles JSON in Python?", "choices": ["A. xml", "B. csv", "C. json", "D. data"] },
+      { "id": 6, "question": "What does json.dumps(data) return?", "choices": ["A. A file object", "B. A Python dictionary", "C. A JSON-formatted string", "D. A list of bytes"] },
+      { "id": 7, "question": "What does json.load(f) do?", "choices": ["A. Writes a Python object to a JSON file", "B. Reads a JSON file and returns a Python object", "C. Converts a string to JSON", "D. Validates a JSON structure"] },
+      { "id": 8, "question": "Which mode creates a new file and raises an error if it already exists?", "choices": ["A. 'r'", "B. 'w'", "C. 'a'", "D. 'x'"] },
+      { "id": 9, "question": "What is the correct way to read the entire content of a text file?", "choices": ["A. file.read_all()", "B. file.get_content()", "C. file.read()", "D. file.load()"] },
+      { "id": 10, "question": "What does the 'r+' mode allow?", "choices": ["A. Read-only access", "B. Write-only access", "C. Both reading and writing", "D. Append and read"] }
+    ],
+    "answerKey": ["C", "C", "B", "B", "C", "C", "B", "D", "C", "C"]
+  },
+  {
+    "quizID": "quiz-exceptions",
+    "lessonRef": "exceptions",
+    "questionSet": [
+      { "id": 1, "question": "Which block always executes, whether an exception occurs or not?", "choices": ["A. except", "B. else", "C. finally", "D. catch"] },
+      { "id": 2, "question": "What exception is raised when dividing by zero?", "choices": ["A. MathError", "B. ArithmeticError", "C. ZeroDivisionError", "D. ValueError"] },
+      { "id": 3, "question": "What keyword is used to raise an exception manually?", "choices": ["A. throw", "B. raise", "C. error", "D. exception"] },
+      { "id": 4, "question": "What exception is raised when a variable name is not found?", "choices": ["A. KeyError", "B. NameError", "C. AttributeError", "D. IndexError"] },
+      { "id": 5, "question": "Which block runs only if NO exception was raised?", "choices": ["A. finally", "B. catch", "C. always", "D. else"] },
+      { "id": 6, "question": "How do you create a custom exception class?", "choices": ["A. class MyError(Error):", "B. class MyError(Exception):", "C. define MyError extends Exception:", "D. exception MyError:"] },
+      { "id": 7, "question": "What exception is raised for an invalid type in an operation?", "choices": ["A. ValueError", "B. AttributeError", "C. TypeError", "D. RuntimeError"] },
+      { "id": 8, "question": "What does 'except Exception as e:' do?", "choices": ["A. Catches only RuntimeError", "B. Catches all exceptions and binds them to variable e", "C. Prints the exception automatically", "D. Suppresses all exceptions silently"] },
+      { "id": 9, "question": "What exception is raised when accessing a list with an invalid index?", "choices": ["A. KeyError", "B. ValueError", "C. IndexError", "D. RangeError"] },
+      { "id": 10, "question": "What exception is raised when a key is not found in a dictionary?", "choices": ["A. IndexError", "B. AttributeError", "C. NameError", "D. KeyError"] }
+    ],
+    "answerKey": ["C", "C", "B", "B", "D", "B", "C", "B", "C", "D"]
+  },
+  {
+    "quizID": "quiz-oop",
+    "lessonRef": "oop",
+    "questionSet": [
+      { "id": 1, "question": "What is the special method called when creating an object?", "choices": ["A. __create__", "B. __start__", "C. __init__", "D. __new__"] },
+      { "id": 2, "question": "What does 'self' refer to inside a class method?", "choices": ["A. The class itself", "B. The current instance of the class", "C. The parent class", "D. The module"] },
+      { "id": 3, "question": "Which keyword is used to inherit from a parent class?", "choices": ["A. extends", "B. inherits", "C. The class name in parentheses", "D. super"] },
+      { "id": 4, "question": "What does super().__init__() do?", "choices": ["A. Creates a new object", "B. Calls the parent class constructor", "C. Deletes the current object", "D. Overrides all parent methods"] },
+      { "id": 5, "question": "What is encapsulation in OOP?", "choices": ["A. Calling a method from a subclass", "B. Bundling data and methods that operate on the data into a class", "C. Creating multiple classes", "D. Using inheritance"] },
+      { "id": 6, "question": "A private attribute in Python is conventionally prefixed with:", "choices": ["A. @", "B. #", "C. __", "D. private_"] },
+      { "id": 7, "question": "What is polymorphism?", "choices": ["A. Having multiple constructors", "B. The ability of different classes to be used interchangeably", "C. Inheriting from multiple parents", "D. Hiding implementation details"] },
+      { "id": 8, "question": "What does the __str__ method do?", "choices": ["A. Converts the object to bytes", "B. Returns a string representation when print() is called", "C. Initializes string attributes", "D. Deletes string attributes"] },
+      { "id": 9, "question": "What is a class attribute (vs an instance attribute)?", "choices": ["A. An attribute only accessible in subclasses", "B. An attribute shared across all instances of the class", "C. An attribute set in __init__ only", "D. An attribute that cannot be changed"] },
+      { "id": 10, "question": "Multiple inheritance means a class can inherit from:", "choices": ["A. Only one parent", "B. No parents", "C. Two or more parent classes", "D. Only abstract classes"] }
+    ],
+    "answerKey": ["C", "B", "C", "B", "B", "C", "B", "B", "B", "C"]
+  },
+  {
+    "quizID": "quiz-modules",
+    "lessonRef": "modules",
+    "questionSet": [
+      { "id": 1, "question": "How do you import only the sqrt function from the math module?", "choices": ["A. import sqrt from math", "B. from math import sqrt", "C. include math.sqrt", "D. use math::sqrt"] },
+      { "id": 2, "question": "What does 'import math as m' allow?", "choices": ["A. Imports only the math.m submodule", "B. Uses 'm' as an alias for the math module", "C. Imports the module twice", "D. Creates a copy of math"] },
+      { "id": 3, "question": "What is the purpose of __init__.py in a package directory?", "choices": ["A. Initializes all classes automatically", "B. Marks the directory as a Python package", "C. Imports all modules in the directory", "D. Defines the main function"] },
+      { "id": 4, "question": "What does 'from math import *' do?", "choices": ["A. Imports nothing", "B. Imports all public names from the math module", "C. Imports only math.pi", "D. Raises an ImportError"] },
+      { "id": 5, "question": "Which standard library module provides random number generation?", "choices": ["A. numbers", "B. rand", "C. random", "D. numpy"] },
+      { "id": 6, "question": "What does math.factorial(5) return?", "choices": ["A. 15", "B. 25", "C. 120", "D. 625"] },
+      { "id": 7, "question": "How do you check the value of math.pi?", "choices": ["A. import pi from math; print(pi)", "B. import math; print(math.pi)", "C. print(pi)", "D. get_pi()"] },
+      { "id": 8, "question": "What module is used for working with dates and times?", "choices": ["A. time_utils", "B. dates", "C. datetime", "D. calendar_module"] },
+      { "id": 9, "question": "What is a package in Python?", "choices": ["A. A single .py file", "B. A directory containing Python modules and an __init__.py", "C. A compiled .pyc file", "D. A class with multiple methods"] },
+      { "id": 10, "question": "What does the sys module provide access to?", "choices": ["A. Database connectivity", "B. Network sockets", "C. Interpreter variables and functions", "D. GUI components"] }
+    ],
+    "answerKey": ["B", "B", "B", "B", "C", "C", "B", "C", "B", "C"]
+  },
+  {
+    "quizID": "quiz-comprehensions",
+    "lessonRef": "comprehensions",
+    "questionSet": [
+      { "id": 1, "question": "What is the output of: [x*2 for x in range(3)]?", "choices": ["A. [0, 1, 2]", "B. [0, 2, 4]", "C. [2, 4, 6]", "D. [1, 2, 3]"] },
+      { "id": 2, "question": "Which creates a set comprehension?", "choices": ["A. [x for x in items]", "B. {x for x in items}", "C. (x for x in items)", "D. <x for x in items>"] },
+      { "id": 3, "question": "What does a generator expression return?", "choices": ["A. A list", "B. A tuple", "C. A set", "D. A generator object (lazy iterator)"] },
+      { "id": 4, "question": "What is the advantage of a generator over a list comprehension?", "choices": ["A. Generators are always faster", "B. Generators use less memory by computing values lazily", "C. Generators support indexing", "D. Generators automatically sort the output"] },
+      { "id": 5, "question": "What keyword is used in a generator function?", "choices": ["A. return_gen", "B. produce", "C. yield", "D. generate"] },
+      { "id": 6, "question": "What is the result of: {k: k**2 for k in range(1, 4)}?", "choices": ["A. [1, 4, 9]", "B. {1: 1, 2: 4, 3: 9}", "C. (1, 4, 9)", "D. {1, 2, 3}"] },
+      { "id": 7, "question": "How do you get the next value from a generator g?", "choices": ["A. g.get()", "B. g.value()", "C. next(g)", "D. g.next_val()"] },
+      { "id": 8, "question": "What is sum(x for x in range(4)) equivalent to?", "choices": ["A. sum([0,1,2,3]) = 6", "B. sum([1,2,3,4]) = 10", "C. 0 + 1 + 2 + 3 = 6", "D. Both A and C"] },
+      { "id": 9, "question": "What filtered comprehension keeps only even numbers from 0-9?", "choices": ["A. [x for x in range(10)]", "B. [x for x in range(10) if x % 2 != 0]", "C. [x for x in range(10) if x % 2 == 0]", "D. {x: x for x in range(10) if x > 0}"] },
+      { "id": 10, "question": "What exception signals that a generator is exhausted?", "choices": ["A. GeneratorEmpty", "B. StopIteration", "C. IterationError", "D. GeneratorExit"] }
+    ],
+    "answerKey": ["B", "B", "D", "B", "C", "B", "C", "D", "C", "B"]
+  },
+  {
+    "quizID": "quiz-decorators",
+    "lessonRef": "decorators",
+    "questionSet": [
+      { "id": 1, "question": "What symbol precedes a decorator applied to a function?", "choices": ["A. #", "B. $", "C. @", "D. !"] },
+      { "id": 2, "question": "What does a decorator fundamentally do?", "choices": ["A. Deletes the original function", "B. Wraps a function to extend or modify its behavior", "C. Copies the function to another module", "D. Converts the function to a class"] },
+      { "id": 3, "question": "What is the purpose of functools.wraps in a decorator?", "choices": ["A. Speeds up the wrapped function", "B. Preserves the original function's metadata", "C. Adds arguments to the function", "D. Makes the decorator optional"] },
+      { "id": 4, "question": "What does map(func, iterable) return?", "choices": ["A. A list", "B. A dictionary", "C. A map object (lazy iterator) applying func to each item", "D. None"] },
+      { "id": 5, "question": "What does filter(func, iterable) do?", "choices": ["A. Maps each element to True or False", "B. Returns elements for which func returns True", "C. Sorts the iterable using func", "D. Reduces the iterable to one value"] },
+      { "id": 6, "question": "What does reduce(func, [1,2,3,4]) compute if func = lambda a,b: a*b?", "choices": ["A. 10", "B. 24", "C. 4", "D. 1"] },
+      { "id": 7, "question": "In which module is reduce() found in Python 3?", "choices": ["A. builtins", "B. itertools", "C. functools", "D. operator"] },
+      { "id": 8, "question": "What is a higher-order function?", "choices": ["A. A function that runs faster than normal", "B. A function that takes or returns other functions", "C. A recursive function with memoization", "D. A function with more than 5 parameters"] },
+      { "id": 9, "question": "What is a closure in Python?", "choices": ["A. A class with no public methods", "B. A function that has access to variables from its enclosing scope", "C. A module that can be closed", "D. A try-finally block"] },
+      { "id": 10, "question": "What does @staticmethod do to a method inside a class?", "choices": ["A. Makes it private", "B. Makes it a class method", "C. Removes the 'self' parameter — it doesn't receive the instance", "D. Converts it to a property"] }
+    ],
+    "answerKey": ["C", "B", "B", "C", "B", "B", "C", "B", "B", "C"]
+  }
+]

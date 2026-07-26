@@ -1,0 +1,343 @@
+/* ── PyKnowledge Main Stylesheet ────────────────────────────────────────────
+   Supports both light (default) and dark themes via [data-theme="dark"].
+   Optimized for desktop workstations at 1080p; graceful on 768px+ screens.
+   Target hardware: ≥ 2 GB RAM, integrated GPU (no heavy animations).
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Design tokens ──────────────────────────────────────────────────────────── */
+:root {
+  --color-bg:          #f5f7fa;
+  --color-surface:     #ffffff;
+  --color-primary:     #0969da;
+  --color-primary-h:   #0752b3;
+  --color-accent:      #8250df;
+  --color-text:        #1f2328;
+  --color-text-muted:  #656d76;
+  --color-border:      #d0d7de;
+  --color-locked:      #e6e6e6;
+  --color-pass:        #dafbe1;
+  --color-pass-text:   #116329;
+  --color-fail:        #ffebe9;
+  --color-fail-text:   #82071e;
+  --color-code-bg:     #f6f8fa;
+  --radius:            8px;
+  --shadow:            0 2px 8px rgba(0,0,0,.08);
+  --font-mono:         'Courier New', Courier, monospace;
+}
+
+[data-theme="dark"] {
+  --color-bg:          #0d1117;
+  --color-surface:     #161b22;
+  --color-primary:     #58a6ff;
+  --color-primary-h:   #79b8ff;
+  --color-text:        #c9d1d9;
+  --color-text-muted:  #8b949e;
+  --color-border:      #30363d;
+  --color-locked:      #21262d;
+  --color-pass:        #0d2b16;
+  --color-pass-text:   #56d364;
+  --color-fail:        #2d1216;
+  --color-fail-text:   #f85149;
+  --color-code-bg:     #0d1117;
+}
+
+/* ── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── App shell ──────────────────────────────────────────────────────────────── */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  height: 60px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-title {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.app-subtitle {
+  color: var(--color-text-muted);
+  font-size: .85rem;
+}
+
+.header-controls {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+/* ── Progress bar (header) ───────────────────────────────────────────────────── */
+.progress-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progress-track {
+  background: var(--color-border);
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+  width: 180px;
+}
+
+#progress-bar {
+  background: var(--color-primary);
+  height: 100%;
+  transition: width .4s ease;
+  width: 0%;
+}
+
+#progress-text {
+  color: var(--color-text-muted);
+  font-size: .75rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius);
+  color: #fff;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  transition: background .15s;
+}
+.btn-primary:hover { background: var(--color-primary-h); }
+
+#theme-toggle, #nav-back {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: .85rem;
+  padding: 6px 12px;
+  transition: border-color .15s;
+}
+#theme-toggle:hover, #nav-back:hover { border-color: var(--color-primary); }
+
+#nav-back { display: none; }
+
+/* ── Main content area ──────────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 24px;
+  width: 100%;
+}
+
+/* ── Dashboard — module grid ─────────────────────────────────────────────────── */
+#dashboard {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.module-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  padding: 20px;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.module-card:hover:not(.locked) {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(9,105,218,.15);
+  transform: translateY(-2px);
+}
+.module-card.locked {
+  background: var(--color-locked);
+  cursor: not-allowed;
+  opacity: .65;
+}
+.module-card.completed { border-color: var(--color-pass-text); }
+
+.module-badge { font-size: 1.6rem; }
+
+.module-card h3 {
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.module-score {
+  color: var(--color-text-muted);
+  font-size: .8rem;
+  margin-top: 6px;
+}
+
+/* ── Content pane (lesson view) ─────────────────────────────────────────────── */
+#content-pane {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  display: none;
+}
+
+#content-pane h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+#content-pane p { margin-bottom: 12px; }
+
+#content-pane pre {
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin: 16px 0;
+  overflow-x: auto;
+  padding: 16px;
+}
+
+#content-pane code {
+  font-family: var(--font-mono);
+  font-size: .9rem;
+}
+
+.btn-start-quiz {
+  display: block;
+  margin-top: 24px;
+}
+
+/* ── Quiz pane ──────────────────────────────────────────────────────────────── */
+#quiz-pane {
+  display: none;
+}
+
+#quiz-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.quiz-question {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  padding: 20px;
+}
+
+.question-text {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.choices { display: flex; flex-direction: column; gap: 8px; }
+
+.choice-label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.choice-label:hover { color: var(--color-primary); }
+
+#quiz-form button[type="submit"] {
+  margin-top: 24px;
+}
+
+/* ── Score display ──────────────────────────────────────────────────────────── */
+#score-display { display: none; }
+
+.score-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+}
+
+.score-pass { background: var(--color-pass); border-color: var(--color-pass-text); }
+.score-fail { background: var(--color-fail); border-color: var(--color-fail-text); }
+
+.score-value {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.score-value span {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.score-message {
+  font-size: 1.1rem;
+  margin: 16px 0 24px;
+}
+
+/* ── Badge container ────────────────────────────────────────────────────────── */
+#badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.badge {
+  background: var(--color-accent);
+  border-radius: 20px;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+}
+
+.badge-empty {
+  color: var(--color-text-muted);
+  font-size: .85rem;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────────── */
+footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: .8rem;
+  padding: 16px 24px;
+  text-align: center;
+}

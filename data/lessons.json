@@ -1,0 +1,77 @@
+[
+  {
+    "moduleID": "intro",
+    "title": "Introduction to Python",
+    "content": "<h2>Introduction to Python</h2><p>Python is a high-level, interpreted programming language known for its clear syntax and readability. It was created by Guido van Rossum and first released in 1991.</p><pre><code class=\"language-python\"># Your first Python program\nprint(\"Hello, World!\")</code></pre><p>Python supports multiple programming paradigms including procedural, object-oriented, and functional programming.</p>"
+  },
+  {
+    "moduleID": "variables",
+    "title": "Variables and Data Types",
+    "content": "<h2>Variables and Data Types</h2><p>Variables are containers for storing data values. Python has no command for declaring a variable — it is created the moment you first assign a value to it.</p><pre><code class=\"language-python\"># Variable assignment\nname = \"Alice\"\nage = 25\nheight = 5.6\nis_student = True\n\nprint(type(name))    # &lt;class 'str'&gt;\nprint(type(age))     # &lt;class 'int'&gt;\nprint(type(height))  # &lt;class 'float'&gt;\nprint(type(is_student))  # &lt;class 'bool'&gt;</code></pre>"
+  },
+  {
+    "moduleID": "operators",
+    "title": "Operators and Expressions",
+    "content": "<h2>Operators and Expressions</h2><p>Python provides a rich set of operators for arithmetic, comparison, logical, and bitwise operations.</p><pre><code class=\"language-python\"># Arithmetic operators\nx = 10\ny = 3\nprint(x + y)   # 13 — addition\nprint(x - y)   # 7  — subtraction\nprint(x * y)   # 30 — multiplication\nprint(x / y)   # 3.333 — division\nprint(x // y)  # 3  — floor division\nprint(x % y)   # 1  — modulo\nprint(x ** y)  # 1000 — exponentiation</code></pre>"
+  },
+  {
+    "moduleID": "control-flow",
+    "title": "Control Flow: if, elif, else",
+    "content": "<h2>Control Flow</h2><p>Control flow statements allow you to control the order in which code is executed based on conditions.</p><pre><code class=\"language-python\"># if-elif-else example\nscore = 85\n\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 75:\n    grade = 'C'\nelse:\n    grade = 'F'\n\nprint(f\"Your grade is: {grade}\")</code></pre>"
+  },
+  {
+    "moduleID": "loops",
+    "title": "Loops: for and while",
+    "content": "<h2>Loops</h2><p>Loops allow you to execute a block of code repeatedly. Python has two primary loop constructs: <code>for</code> and <code>while</code>.</p><pre><code class=\"language-python\"># for loop\nfor i in range(5):\n    print(i)  # prints 0, 1, 2, 3, 4\n\n# while loop\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n\n# Loop with list\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)</code></pre>"
+  },
+  {
+    "moduleID": "functions",
+    "title": "Functions and Scope",
+    "content": "<h2>Functions and Scope</h2><p>Functions are reusable blocks of code that perform a specific task. They help organize code and avoid repetition.</p><pre><code class=\"language-python\"># Function definition\ndef greet(name, greeting='Hello'):\n    \"\"\"Return a greeting message.\"\"\"\n    return f\"{greeting}, {name}!\"\n\n# Function calls\nprint(greet('Alice'))          # Hello, Alice!\nprint(greet('Bob', 'Hi'))      # Hi, Bob!\n\n# Lambda function\nsquare = lambda x: x ** 2\nprint(square(5))  # 25</code></pre>"
+  },
+  {
+    "moduleID": "lists",
+    "title": "Lists and List Comprehensions",
+    "content": "<h2>Lists and List Comprehensions</h2><p>Lists are ordered, mutable sequences that can contain elements of any type. List comprehensions provide a concise way to create lists.</p><pre><code class=\"language-python\"># List operations\nnumbers = [1, 2, 3, 4, 5]\nnumbers.append(6)\nnumbers.insert(0, 0)\nprint(numbers)  # [0, 1, 2, 3, 4, 5, 6]\n\n# List comprehension\nsquares = [x ** 2 for x in range(1, 6)]\nprint(squares)  # [1, 4, 9, 16, 25]\n\n# Filtered comprehension\nevens = [x for x in range(10) if x % 2 == 0]\nprint(evens)  # [0, 2, 4, 6, 8]</code></pre>"
+  },
+  {
+    "moduleID": "dictionaries",
+    "title": "Dictionaries and Sets",
+    "content": "<h2>Dictionaries and Sets</h2><p>Dictionaries are key-value stores. Sets are unordered collections of unique elements.</p><pre><code class=\"language-python\"># Dictionary\nstudent = {\n    'name': 'Alice',\n    'age': 20,\n    'course': 'BSIT'\n}\nprint(student['name'])  # Alice\nstudent['gpa'] = 3.8\n\n# Dictionary comprehension\nsquares = {x: x**2 for x in range(1, 6)}\nprint(squares)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}\n\n# Set\nunique_nums = {1, 2, 3, 2, 1}\nprint(unique_nums)  # {1, 2, 3}</code></pre>"
+  },
+  {
+    "moduleID": "strings",
+    "title": "String Manipulation",
+    "content": "<h2>String Manipulation</h2><p>Strings in Python are immutable sequences of Unicode characters. Python offers powerful built-in methods for string manipulation.</p><pre><code class=\"language-python\"># String methods\ntext = \"  Hello, Python World!  \"\nprint(text.strip())           # 'Hello, Python World!'\nprint(text.lower())           # '  hello, python world!  '\nprint(text.upper())           # '  HELLO, PYTHON WORLD!  '\nprint(text.replace('Python', 'Copilot'))\n\n# f-strings (formatted string literals)\nname = 'Alice'\nage = 20\nprint(f\"{name} is {age} years old.\")\n\n# String slicing\nword = 'Python'\nprint(word[0:3])   # Pyt\nprint(word[::-1])  # nohtyP</code></pre>"
+  },
+  {
+    "moduleID": "file-io",
+    "title": "File Input/Output",
+    "content": "<h2>File Input/Output</h2><p>Python makes it easy to read and write files using built-in functions. The <code>with</code> statement ensures files are properly closed after use.</p><pre><code class=\"language-python\"># Writing to a file\nwith open('data.txt', 'w') as file:\n    file.write('Line 1\\n')\n    file.write('Line 2\\n')\n\n# Reading from a file\nwith open('data.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Reading lines\nwith open('data.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# JSON file handling\nimport json\ndata = {'name': 'Alice', 'score': 95}\nwith open('result.json', 'w') as f:\n    json.dump(data, f, indent=2)</code></pre>"
+  },
+  {
+    "moduleID": "exceptions",
+    "title": "Exception Handling",
+    "content": "<h2>Exception Handling</h2><p>Exception handling allows programs to respond gracefully to errors at runtime using <code>try</code>, <code>except</code>, <code>else</code>, and <code>finally</code> blocks.</p><pre><code class=\"language-python\"># Basic exception handling\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError as e:\n    print(f\"Error: {e}\")\nfinally:\n    print('This always runs')\n\n# Multiple exception types\ntry:\n    value = int(input('Enter a number: '))\n    print(100 / value)\nexcept ValueError:\n    print('Please enter a valid integer.')\nexcept ZeroDivisionError:\n    print('Cannot divide by zero.')\n\n# Custom exception\nclass InsufficientScoreError(Exception):\n    pass</code></pre>"
+  },
+  {
+    "moduleID": "oop",
+    "title": "Object-Oriented Programming",
+    "content": "<h2>Object-Oriented Programming</h2><p>OOP organizes code around objects — entities that bundle data (attributes) and behaviour (methods). Python fully supports OOP with classes, inheritance, and polymorphism.</p><pre><code class=\"language-python\"># Class definition\nclass Student:\n    def __init__(self, name, student_id):\n        self.name = name\n        self.student_id = student_id\n        self.grades = []\n\n    def add_grade(self, grade):\n        self.grades.append(grade)\n\n    def get_average(self):\n        if not self.grades:\n            return 0\n        return sum(self.grades) / len(self.grades)\n\n    def __str__(self):\n        return f\"Student({self.name}, ID={self.student_id})\"\n\n# Inheritance\nclass GraduateStudent(Student):\n    def __init__(self, name, student_id, thesis_topic):\n        super().__init__(name, student_id)\n        self.thesis_topic = thesis_topic</code></pre>"
+  },
+  {
+    "moduleID": "modules",
+    "title": "Modules and Packages",
+    "content": "<h2>Modules and Packages</h2><p>Modules allow you to organize Python code into reusable files. Packages are directories of modules. Python comes with a comprehensive standard library.</p><pre><code class=\"language-python\"># Importing modules\nimport math\nimport random\nfrom datetime import datetime\n\n# Using math module\nprint(math.sqrt(16))    # 4.0\nprint(math.pi)          # 3.14159...\nprint(math.factorial(5)) # 120\n\n# Using random module\nprint(random.randint(1, 100))\nprint(random.choice(['a', 'b', 'c']))\n\n# Using datetime\nnow = datetime.now()\nprint(now.strftime('%Y-%m-%d %H:%M:%S'))\n\n# Creating your own module\n# Save as utils.py:\ndef add(a, b):\n    return a + b</code></pre>"
+  },
+  {
+    "moduleID": "comprehensions",
+    "title": "Advanced Comprehensions and Generators",
+    "content": "<h2>Advanced Comprehensions and Generators</h2><p>Python offers advanced iteration patterns through comprehensions and generators that enable efficient, readable data processing pipelines.</p><pre><code class=\"language-python\"># Dictionary comprehension\nscores = {'Alice': 88, 'Bob': 72, 'Carol': 95}\npassed = {name: score for name, score in scores.items() if score >= 75}\nprint(passed)  # {'Alice': 88, 'Carol': 95}\n\n# Set comprehension\nunique_lengths = {len(w) for w in ['cat', 'dog', 'bird', 'ant']}\nprint(unique_lengths)  # {3, 4}\n\n# Generator expression\ntotal = sum(x**2 for x in range(1, 101))\nprint(total)  # 338350\n\n# Generator function\ndef fibonacci():\n    a, b = 0, 1\n    while True:\n        yield a\n        a, b = b, a + b\n\nfib = fibonacci()\nprint([next(fib) for _ in range(8)])  # [0,1,1,2,3,5,8,13]</code></pre>"
+  },
+  {
+    "moduleID": "decorators",
+    "title": "Decorators and Functional Programming",
+    "content": "<h2>Decorators and Functional Programming</h2><p>Decorators are a powerful pattern that allows you to modify or extend the behavior of functions without changing their source code. Functional programming techniques enhance code expressiveness.</p><pre><code class=\"language-python\"># Decorator definition\ndef timer(func):\n    import time\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        end = time.time()\n        print(f\"{func.__name__} took {end - start:.4f}s\")\n        return result\n    return wrapper\n\n@timer\ndef compute(n):\n    return sum(range(n))\n\ncompute(1_000_000)\n\n# Functional tools\nfrom functools import reduce\nnumbers = [1, 2, 3, 4, 5]\nproduct = reduce(lambda a, b: a * b, numbers)\nprint(product)  # 120\n\n# map and filter\ndoubled = list(map(lambda x: x * 2, numbers))\nevens = list(filter(lambda x: x % 2 == 0, numbers))</code></pre>"
+  }
+]
