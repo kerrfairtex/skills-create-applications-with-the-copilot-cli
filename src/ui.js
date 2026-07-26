@@ -225,9 +225,7 @@ class UI_Layer {
     startQuizBtn.className = 'btn-primary btn-start-quiz';
     startQuizBtn.textContent = 'Take Quiz';
     startQuizBtn.addEventListener('click', async () => {
-      const response = await this._engine._cache.fetchAsset('/data/quizzes.json');
-      const quizzes  = response ? await response.json() : [];
-      const quiz     = quizzes.find(q => q.lessonRef === moduleID);
+      const quiz = await this._engine.getQuizForModule(moduleID);
       if (quiz) this.renderQuiz(quiz, moduleID);
     });
 

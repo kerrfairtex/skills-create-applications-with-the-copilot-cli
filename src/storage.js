@@ -98,13 +98,11 @@ class LocalStorageProxy {
 
   _recalculateTotalProgress(state) {
     const moduleIDs = Object.keys(state.modules);
-    if (moduleIDs.length === 0) {
+    if (moduleIDs.length === 0 || !state.totalModuleCount) {
       state.total_progress = 0;
       return;
     }
     const completed    = moduleIDs.filter(id => state.modules[id].is_completed).length;
-    // Use the stored total module count when available; default to 15 (PyKnowledge curriculum)
-    const totalModules = state.totalModuleCount || 15;
-    state.total_progress = parseFloat((completed / totalModules).toFixed(4));
+    state.total_progress = parseFloat((completed / state.totalModuleCount).toFixed(4));
   }
 }

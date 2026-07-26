@@ -30,7 +30,13 @@ const APP_SHELL_ASSETS = [
   '/data/quizzes.json'
 ];
 
-/** Video lecture assets (720p H.264) — large; cached on first access */
+/**
+ * Video lecture assets (720p H.264) — catalogued here for documentation.
+ * These are NOT pre-cached during install to avoid exceeding the 250MB quota
+ * on install; instead they are cached on first playback via _cacheFirstMedia().
+ * Pre-caching may be triggered during a dedicated "sync" session using
+ * ServiceWorkerProxy.precacheAssets(MEDIA_ASSETS) from the UI.
+ */
 const MEDIA_ASSETS = [
   '/media/lecture-intro.mp4',
   '/media/lecture-variables.mp4',

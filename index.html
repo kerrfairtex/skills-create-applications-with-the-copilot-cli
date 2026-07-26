@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +7,16 @@
   <title>PyKnowledge — Offline Python Learning</title>
   <link rel="stylesheet" href="/styles/main.css" />
 
-  <!-- Prevent FOUC by reading the saved theme preference before paint -->
+  <!-- Set the initial theme before any content renders to avoid a flash of unstyled theme.
+       Falls back to "light" when no preference is stored in LocalStorage. -->
   <script>
     (function () {
       try {
         const saved = localStorage.getItem('pyknowledge_theme');
-        if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-      } catch (_) { /* LocalStorage unavailable */ }
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (_) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
     })();
   </script>
 </head>

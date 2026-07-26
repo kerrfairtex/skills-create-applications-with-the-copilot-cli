@@ -147,7 +147,21 @@ class ExecutionEngine {
     return ids;
   }
 
-  // ── Private helpers ────────────────────────────────────────────────────────
+  /**
+   * Fetch the quiz object for a given moduleID from the cached quizzes.json.
+   * Provides a public, encapsulated way to retrieve quiz data without
+   * exposing the internal _cache reference to external callers (e.g., UI_Layer).
+   *
+   * @param   {string}          moduleID
+   * @returns {Promise<object|null>}
+   */
+  async getQuizForModule(moduleID) {
+    const quizzes = await this._getQuizzes();
+    if (!quizzes) return null;
+    return quizzes.find(q => q.lessonRef === moduleID) || null;
+  }
+
+
 
   /** Lazily load and cache lessons.json */
   async _getLessons() {
