@@ -134,7 +134,17 @@ class ExecutionEngine {
   async getModuleIDs() {
     const lessons = await this._getLessons();
     if (!lessons) return [];
-    return lessons.map(l => l.moduleID);
+    const ids = lessons.map(l => l.moduleID);
+
+    // Persist the total module count so LocalStorageProxy can calculate
+    // total_progress dynamically without a hardcoded magic number.
+    const state = this._storage.readProgress();
+    if (state.totalModuleCount !== ids.length) {
+      state.totalModuleCount = ids.length;
+      this._storage.writeProgress(state);
+    }
+
+    return ids;
   }
 
   // ── Private helpers ────────────────────────────────────────────────────────

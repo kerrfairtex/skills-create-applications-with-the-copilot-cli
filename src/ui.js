@@ -48,6 +48,12 @@ class UI_Layer {
       this._els.navBack.addEventListener('click', () => this._showSection('dashboard'));
     }
 
+    // Sync internal _darkMode state with the theme the FOUC-prevention script may have set
+    this._darkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (this._els.themeToggle) {
+      this._els.themeToggle.textContent = this._darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+
     this.renderDashboard();
   }
 
@@ -132,13 +138,15 @@ class UI_Layer {
    */
   toggleDarkMode() {
     this._darkMode = !this._darkMode;
-    document.documentElement.setAttribute(
-      'data-theme',
-      this._darkMode ? 'dark' : 'light'
-    );
+    const theme = this._darkMode ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
     if (this._els.themeToggle) {
       this._els.themeToggle.textContent = this._darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
     }
+    // Persist preference so the inline FOUC-prevention script can restore it on reload
+    try {
+      localStorage.setItem('pyknowledge_theme', theme);
+    } catch (_) { /* LocalStorage unavailable — non-critical */ }
   }
 
   // ── Quiz rendering ─────────────────────────────────────────────────────────
@@ -217,7 +225,8 @@ class UI_Layer {
     startQuizBtn.className = 'btn-primary btn-start-quiz';
     startQuizBtn.textContent = 'Take Quiz';
     startQuizBtn.addEventListener('click', async () => {
-      const quizzes  = await fetch('/data/quizzes.json').then(r => r.json());
+      const response = await this._engine._cache.fetchAsset('/data/quizzes.json');
+      const quizzes  = response ? await response.json() : [];
       const quiz     = quizzes.find(q => q.lessonRef === moduleID);
       if (quiz) this.renderQuiz(quiz, moduleID);
     });
