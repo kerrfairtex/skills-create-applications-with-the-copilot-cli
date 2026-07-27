@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PyKnowledge — Offline Python Learning Platform for BSIT students at TRAC, compliant with CHED standards." />
+  <title>PyKnowledge — Offline Python Learning</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+
+  <!-- Set the initial theme before any content renders to avoid a flash of unstyled theme.
+       Falls back to "light" when no preference is stored in LocalStorage. -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('pyknowledge_theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (_) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- ── Application header ──────────────────────────────────────────── -->
+    <header>
+      <div class="header-inner">
+        <div>
+          <div class="app-title">🐍 PyKnowledge</div>
+          <div class="app-subtitle">Offline Python Learning Platform</div>
+        </div>
+
+        <div class="header-controls">
+          <!-- Progress indicator -->
+          <div class="progress-wrap">
+            <div class="progress-track">
+              <div id="progress-bar"></div>
+            </div>
+            <span id="progress-text">0% complete</span>
+          </div>
+
+          <!-- Navigation -->
+          <button id="nav-back" title="Back to Dashboard">← Dashboard</button>
+          <button id="theme-toggle" title="Toggle dark / light mode">🌙 Dark Mode</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Main content area ───────────────────────────────────────────── -->
+    <main>
+
+      <!-- Module dashboard grid — rendered by UI_Layer.renderDashboard() -->
+      <div id="dashboard" role="list" aria-label="Python learning modules"></div>
+
+      <!-- Lesson content pane — populated by UI_Layer.displayLesson() -->
+      <article id="content-pane" aria-label="Lesson content"></article>
+
+      <!-- Quiz pane — rendered by UI_Layer.renderQuiz() -->
+      <section id="quiz-pane" aria-label="Module quiz"></section>
+
+      <!-- Score display — populated by UI_Layer.notifyScore() -->
+      <section id="score-display" aria-live="polite" aria-label="Quiz result"></section>
+
+      <!-- Achievement badges -->
+      <div id="badge-container" role="list" aria-label="Earned badges"></div>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────────────────── -->
+    <footer>
+      <p>
+        PyKnowledge &bull; Compliant with
+        <abbr title="Commission on Higher Education">CHED</abbr> standards &bull;
+        Tawi-Tawi Regional Agricultural College (TRAC)
+      </p>
+      <p>All content served offline via the Service Worker Cache API.</p>
+    </footer>
+
+  </div><!-- /#app -->
+
+  <!-- ── Application scripts (ES6 classes, no bundler required) ─────── -->
+  <script src="/src/storage.js"></script>
+  <script src="/src/cache.js"></script>
+  <script src="/src/engine.js"></script>
+  <script src="/src/ui.js"></script>
+
+  <!-- Bootstrap: wire up the application and register the Service Worker -->
+  <script>
+    (async function bootstrap() {
+      // 1. Instantiate infrastructure proxies
+      const storageProxy = new LocalStorageProxy();
+      const cacheProxy   = new ServiceWorkerProxy();
+
+      // 2. Register the Service Worker (non-blocking; app works without it)
+      await cacheProxy.register();
+
+      // 3. Instantiate the execution engine
+      const engine = new ExecutionEngine(storageProxy, cacheProxy);
+
+      // 4. Instantiate and initialize the UI layer
+      const ui = new UI_Layer(engine, storageProxy);
+
+      // Wait for the DOM to be fully parsed before initializing the UI
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => ui.init());
+      } else {
+        ui.init();
+      }
+
+      // 5. Unlock the first module so new users can always begin
+      engine.checkPrerequisite('intro', null);
+    })();
+  </script>
+</body>
+</html>
